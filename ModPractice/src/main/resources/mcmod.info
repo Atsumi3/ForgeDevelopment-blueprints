@@ -1,0 +1,16 @@
+[
+{
+  "modid": "modpractice",
+  "name": "ModPractice",
+  "description": "ModTest",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Atsumi3"],
+  "credits": "many developers",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

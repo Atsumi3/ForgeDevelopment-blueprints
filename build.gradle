@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+allprojects {
+    apply plugin: 'net.minecraftforge.gradle.forge'
+
+    repositories {
+        jcenter()
+    }
+
+    minecraft {
+        version = "1.12.1-14.22.1.2485"
+        runDir = "run"
+        mappings = "snapshot_20170624"
+    }
+
+    archivesBaseName = project.projectDir.name
+
+    tasks.withType(Jar) {compileJava.options.encoding = 'UTF-8'}
+
+    tasks.withType(Jar) {compileApiJava.options.encoding = 'UTF-8'}
+}

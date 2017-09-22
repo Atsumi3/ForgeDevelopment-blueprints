@@ -1,0 +1,23 @@
+group 'info.nukoneko.minecraft'
+version '0.0.1'
+
+apply plugin: 'java'
+
+sourceSets.main {
+    java.srcDirs project.projectDir.name
+    resources.srcDirs project.projectDir.name
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
