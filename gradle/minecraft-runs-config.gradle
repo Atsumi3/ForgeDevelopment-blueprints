@@ -1,0 +1,25 @@
+/// 各Modモジュールの先頭に読み込む
+// apply from: rootProject.file('gradle/minecraft-runs-config.gradle')
+
+// 読み込み後, gradlew genIntelliJRuns する必要がある
+
+/// property 'forge.logging.console.level'
+// ログレベルの変更
+// debug, info, error, warning
+
+minecraft {
+    runs {
+        client {
+            //noinspection GroovyAssignabilityCheck
+            workingDirectory project.file('dev-client')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+        }
+        server {
+            //noinspection GroovyAssignabilityCheck
+            workingDirectory project.file('dev-server')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+        }
+    }
+}
