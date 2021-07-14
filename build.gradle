@@ -1,29 +1,32 @@
+import dependencies.Dep
+
 buildscript {
     repositories {
-        jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
+        maven { url = "https://maven.minecraftforge.net" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath Dep.GradlePlugin.kotlin
+        classpath Dep.GradlePlugin.forge
     }
 }
 
 allprojects {
-    apply plugin: 'net.minecraftforge.gradle.forge'
+    apply plugin: 'net.minecraftforge.gradle'
+    apply plugin: 'kotlin'
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     minecraft {
-        version = "1.12.1-14.22.1.2485"
-        runDir = "run"
-        mappings = "snapshot_20170624"
+        mappings channel: Dep.Minecraft.channel, version: Dep.Minecraft.version
     }
 
-    archivesBaseName = project.projectDir.name
+    dependencies {
+        implementation Dep.Kotlin.stdlibJvm
 
-    tasks.withType(Jar) {compileJava.options.encoding = 'UTF-8'}
+        minecraft Dep.MinecraftForge.version
+    }
 
-    tasks.withType(Jar) {compileApiJava.options.encoding = 'UTF-8'}
 }

@@ -1,0 +1,83 @@
+# [必須] ModLoaderのタイプ
+modLoader="javafml"
+
+# [必須] サポートするLoaderのバージョン
+loaderVersion="[36,)"
+
+# [必須] ソースコードのライセンス
+license="All rights reserved"
+
+# [必須] ここからModに関する項目という意味
+[[mods]]
+
+# [必須] ModId
+# Modクラスの@Mod内部と一致する必要がある
+modId="mod_practice"
+
+# [必須] Modバージョン
+version="${file.jarVersion}"
+
+# [オプション] Modに問題や改善点がある時に報告してもらうURL
+#issueTrackerURL="https://"
+
+# [必須] Mod名 実際にModリストに表示される名前
+displayName="Mod Practice"
+
+# [オプション] Modの更新情報の管理. アップデートを促すことが出来る.
+# ドキュメント: https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
+#updateJSONURL="https://example.com/modid/updates.json"
+
+# [オプション] ModのWebページのURL
+#displayURL="https://example.com/"
+
+# [オプション] Modのアイコン
+# logoFile="modPractice.png"
+
+# [オプション] Modのクレジット表記
+# credits="hoge"
+
+# [オプション] Modの著者表記
+# authors="hoge"
+
+# [必須] Modの説明文 (複数行)
+description='''
+description!! わぁい日本語
+'''
+
+# [オプション] Modの依存関係
+# Mod が必要とする他のForgeModの情報を書く.
+## 例:
+## [[dependencies.自分のModId]]
+##    # [必須] 依存するModId
+##    modId="ModId"
+##    # [必須] 必須かどうか true or false
+##    mandatory=true
+##    # [必須] 依存ライブラリのバージョン
+##    # 例: 36以上 [36,)
+##    # 例: 36だけ [36]
+##    versionRange="[36,)"
+##    # [必須/オプション] 依存する順序の指定. Modを読み込む順序だろうか(?)
+##    # mandatory が false (必須でない) 時は BEFORE か AFTER の設定が必須
+##    # mandatory が true の時は NONE でよさそう. 必須でないので消してもOK
+##    ordering="NONE"
+##    # [必須] このModが適用される先
+##    # CLIENT (クライアント), SERVER (サーバー), BOTH (どちらも)
+##    side="BOTH"
+
+# Forgeへの依存
+[[dependencies.modPractice]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+# 他のModへの依存はこの辺に書く
+
+# Minecraftへの依存
+[[dependencies.modPractice]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,17 @@
+apply from: rootProject.file('gradle/minecraft-runs-config.gradle')
+
+/// ModId - Mod固有のId
+// 小文字英数字と一部の記号が利用できる
+// src/main/kotlin/ModMain の @Mod と同じ値にする必要がある
+// src/main/resources/META-INF/mod.toml の modID と同じ値にする必要がある
+def modId = "mod_practice"
+
+/// ModVersion - Modのバージョン
+// 数字とドットが利用できる
+// src/main/resources/META-INF/mod.toml の updateJSONURL と合わせて対応すると強い
+// src/main/resources/META-INF/mod.toml の 依存関係で他から依存されるときに重要
+def modVersion = "0.0.1"
+
+group "jp.bizen.minecraft.$modId"
+version modVersion
+archivesBaseName = modId
