@@ -10,7 +10,10 @@ Minecraft Forge で Mod を作るときの最小構成.
   
 ## Version
 Minecraft 1.16.5  
-MinecraftForge 1.16.5
+MinecraftForge 1.16.5-36.1.32
+
+更新時は以下のファイルを弄る  
+buildSrc/src/main/java/dependencies/Dep.kt
 
 ## 注意点
 
